@@ -11,17 +11,13 @@ public class HeadBob : MonoBehaviour
     [SerializeField] private Transform _camera = null;
     [SerializeField] private Transform _cameraHolder = null;
 
-    private float sinFrequency;
-    private float cosFrequency;
-
     private float _toggleSpeed = 3.0f;
     private Vector3 _startPos;
-    private Rigidbody _rigidbody;
+    private Rigidbody _rigidbody; // Change to Rigidbody
 
     private void Awake()
     {
-        // Get the Rigidbody component attached to the same GameObject
-        _rigidbody = GetComponent<Rigidbody>();
+        _rigidbody = GetComponent<Rigidbody>(); // Change to Rigidbody
         _startPos = _camera.localPosition;
     }
 
@@ -35,7 +31,6 @@ public class HeadBob : MonoBehaviour
 
     private Vector3 FootStepMotion()
     {
-        // Calculate head bobbing motion based on time and configured parameters
         Vector3 pos = Vector3.zero;
         pos.y += Mathf.Sin(Time.time * _frequency) * _Amplitude;
         pos.x += Mathf.Cos(Time.time * _frequency / 2) * _Amplitude * 2;
@@ -44,7 +39,6 @@ public class HeadBob : MonoBehaviour
 
     private void CheckMotion()
     {
-        // Check the player's speed and trigger footstep motion if above a certain threshold
         float speed = new Vector3(_rigidbody.velocity.x, 0, _rigidbody.velocity.z).magnitude;
         if (speed < _toggleSpeed) return;
 
@@ -53,13 +47,11 @@ public class HeadBob : MonoBehaviour
 
     private void PlayMotion(Vector3 motion)
     {
-        // Apply the calculated motion to the camera's local position
         _camera.localPosition += motion;
     }
 
     private Vector3 FocusTarget()
     {
-        // Calculate a target position for the camera to look at
         Vector3 pos = new Vector3(transform.position.x, transform.position.y + _cameraHolder.localPosition.y, transform.position.z);
         pos += _cameraHolder.forward * 15.0f;
         return pos;
@@ -67,7 +59,6 @@ public class HeadBob : MonoBehaviour
 
     private void ResetPosition()
     {
-        // Reset the camera's position to its initial position over time
         if (_camera.localPosition == _startPos) return;
         _camera.localPosition = Vector3.Lerp(_camera.localPosition, _startPos, 1 * Time.deltaTime);
     }
