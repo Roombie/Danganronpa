@@ -47,6 +47,8 @@ GameObject:
   - component: {fileID: 3790679634687116539}
   - component: {fileID: 3790679634687116517}
   - component: {fileID: 6199672578043958679}
+  - component: {fileID: 6364520019898548297}
+  - component: {fileID: 7866607098724425814}
   - component: {fileID: 3790679634687116516}
   m_Layer: 0
   m_Name: Player
@@ -136,7 +138,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 1
-  m_Constraints: 80
+  m_Constraints: 88
   m_CollisionDetection: 1
 --- !u!136 &3790679634687116536
 CapsuleCollider:
@@ -194,6 +196,33 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 20d163e2914d6704b9f83859ebff273a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxDistance: 2
+--- !u!114 &6364520019898548297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3790679634687116541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01bc8652b8ada4945b8d059744bd7a89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventoryPanel: {fileID: 0}
+  collection: {fileID: 0}
+--- !u!114 &7866607098724425814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3790679634687116541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55f01bf18fab49f4fb4fa3db07141949, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &3790679634687116516
@@ -313,6 +342,14 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: bfa40a17-56b6-441e-aba4-450042699a3b
     m_ActionName: UI/TrackedDeviceOrientation
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: a4344d0c-9d3a-450e-8f32-758b2c3ccfa5
+    m_ActionName: Player/Examine[/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 943adbc5-6258-455d-9962-0d1279c6c8c2
+    m_ActionName: Player/Pause[/Keyboard/f1]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player

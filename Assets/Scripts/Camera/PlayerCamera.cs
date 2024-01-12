@@ -19,13 +19,6 @@ public class PlayerCamera : MonoBehaviour
 
     private Vector2 inputRotation;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        // Lock the cursor at the start to prevent it from leaving the game window
-        Cursor.lockState = CursorLockMode.Locked;
-    }
-
     private void Update()
     {
         // Handle input for camera rotation
